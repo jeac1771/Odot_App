@@ -873,9 +873,9 @@ if uploaded_file is not None:
   col1, col2, col3 = st.columns(3)
   with col2:
     
-    url = 'https://github.com/jeac1771/Odot_App/blob/main/logos/SRK_logo01.png'
-    image = Image.open(requests.get(url, stream=True).raw)
-    #image = Image.open('.\logos\SRK_logo01.png')
+    #url = 'https://github.com/jeac1771/Odot_App/blob/main/logos/SRK_logo01.png'
+    #image = Image.open(requests.get(url, stream=True).raw)
+    image = Image.open('./logos/SRK_logo01.png')
     st.image(image, width=300)
 
   if RB_derrame_pof == 'Berma de diseño':
