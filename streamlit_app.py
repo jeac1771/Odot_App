@@ -14,6 +14,7 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 from PIL import Image
 from io import BytesIO
+import requests
 
 st.set_page_config(layout = 'wide')
 #plot_odot(file_dominio, file_ancho, file_angle)
@@ -873,8 +874,7 @@ if uploaded_file is not None:
   with col2:
     
     url = 'https://github.com/jeac1771/Odot_App/blob/main/logos/SRK_logo01.png'
-    response = requests.get(url)
-    image = Image.open(BytesIO(response.content))
+    image = Image.open(requests.get(url, stream=True).raw)
     #image = Image.open('.\logos\SRK_logo01.png')
     st.image(image, width=300)
 
